@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mariadb:
+    image: jjchuang42/mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: yourownpassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    ports:
+      - "3306:3306"
+    volumes:
+      - /mariadb:/var/lib/mysql
+    container_name: mariadb
